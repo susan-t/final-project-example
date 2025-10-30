@@ -1,7 +1,3 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(___TODO__: your project name_)
-
 # PlanPal 
 
 ## Overview
@@ -137,28 +133,39 @@ An Example Lesson Plan with Embedded Items:
 16. As a supervisor, I want to mark lesson plans as approved, so that teachers know they’re ready for use in class.
 
 ## Research Topics
+* (4 points) Client-side calendar view
+    * _What is it?_ FullCalendar.js is a JavaScript library that provides an interactive, full-sized calendar interface in web applications. It allows you to display events, appointments, or tasks dynamically and supports drag-and-drop, custom views (month, week, day), and event management features.
+    * _Why use it?_ FullCalendar can help in visually displaying scheduled lesson plans by date. This improves the user experience for teachers and supervisors, making it easy to track upcoming lessons, pending approvals, or overdue tasks at a glance. It also reduces errors compared to manually checking dates.
+    *  _List of possible candidate modules or solutions:_ 
+        * FullCalendar constructor – initialize the calendar in the teacher or supervisor dashboard
+        * events array – dynamically feed lesson plan data from the database into the calendar
+        * dayClick / eventClick – handle clicks on dates or events to view or edit lesson plans
+        * views – customize month/week/day views depending on user preference
 
-(___TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
+* (3 points) Server-side email notifications
+    * _What is it?_ Nodemailer is a Node.js library for sending emails using SMTP or third-party services like Gmail or SendGrid. It allows your server to send messages programmatically when certain actions occur, such as lesson plan approvals.
+    * _Why use it?_ Nodemailer can automatically notify teachers when their lesson plans are approved, declined, or when feedback is added. This improves communication, keeps users informed, and adds professional functionality to the app.
+    * _List of possible candidate modules or solutions:_ 
+        * createTransport() – configure SMTP settings or API service
+        * sendMail() – send emails to teachers or supervisors
+        * HTML templates for email body content
+        * Integration with lesson plan approval events in Express routes
 
-* (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
+* (4 points) Client-side drag-and-drop ordering
+    * _What is it?_ SortableJS is a lightweight JavaScript library that allows items in a list or container to be reordered via drag-and-drop. It supports touch devices, nested lists, and custom animations.
+    * _Why use it?_ SortableJS can enable teachers to reorder activities or sections within a lesson plan visually. This improves user experience, makes editing intuitive, and prevents errors compared to manually entering order numbers.
+    * _List of possible candidate modules or solutions:_ Sortable constructor – initialize drag-and-drop on a list of lesson plan activities
+        * onEnd event – capture new order and update database
+        * draggable class – define which elements can be dragged
+        * Integration with Vue.Draggable or React DnD for component-based frontends
 
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit_)
+11 points total out of 8 required points 
 
 
 ## [Link to Initial Main Project File](app.mjs) 
 
 ## Annotations / References Used
 
-(___TODO__: list any tutorials/references/etc. that you've based your code off of_)
-
-1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
-2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
+1. [FullCalendar Official Website](https://fullcalendar.io/) - (add link to source code that was based on this)
+2. [Nodemailer.js](https://nodemailer.com/) - (add link to source code that was based on this)
+3. [SortablesJS](https://sortablejs.github.io/Sortable/) - (add link to source code that was based on this)
