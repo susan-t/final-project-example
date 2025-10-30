@@ -1,21 +1,21 @@
-// app.js
-// TODO: create a skeleton Express application with routes for login, registration,
-// teacher views, and supervisor views
+// app.mjs
+import './db.mjs'; // connect to MongoDB
+import express from 'express';
+import path from 'path';
+import bodyParser from 'body-parser';
+import session from 'express-session';
+import { fileURLToPath } from 'url';
 
-require('./db');
-
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
-//enable sessions
-const session = require('express-session');
+// enable sessions
 const sessionOptions = {
   secret: 'secret cookie thang (store this elsewhere!)',
   resave: true,
-  saveUninitialized: true
+    saveUninitialized: true
 };
 app.use(session(sessionOptions));
 
@@ -30,13 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTES
-
-// Home redirect (optional)
-app.get('/', (req, res) => {
-  res.redirect('/login');
-});
-
-// Authentication
+// authentication
 app.get('/login', (req, res) => {
   res.render('login', { title: 'Login' });
 });
@@ -92,6 +86,4 @@ app.get('/teacher/profile', (req, res) => {
 });
 
 // start server
-app.listen(3000, () => {
-  console.log('✅ Server running at http://localhost:3000');
-});
+app.listen(3000);
