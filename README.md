@@ -13,9 +13,6 @@ The application will store Users and Lesson Plans.
 * Lesson plans belong to a single user (teacher) and can store information about materials, standards, due dates, and supervisor feedback.
 * Supervisor will have the ability to provide feedback, approve, or decline the Lesson plans
 
-
-(___TODO__: sample documents_)
-
 An Example User:
 
 ```javascript
