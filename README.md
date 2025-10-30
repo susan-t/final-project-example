@@ -2,25 +2,21 @@ The content below is an example project proposal / requirements document. Replac
 
 (___TODO__: your project name_)
 
-# Shoppy Shoperson 
+# PlanPal 
 
 ## Overview
+Lesson planning is a never-ending process for teachers. Between grading, teaching, and trying to maintain a personal life, it can be tough to stay organized. Week after week, planning lessons can become overwhelming to manage.
 
-(___TODO__: a brief one or two paragraph, high-level description of your project_)
-
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
-
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+That’s where **PlanPal** comes in! PlanPal is a web app that helps teachers create, submit, and keep track of all their lesson plans in one place. It reminds teachers of the standards each lesson must meet, and provides easy access to linked materials like activities, slides, and worksheets. The app also sends notifications about planning deadlines and streamlines the approval process with supervisors all in one unified platform.
 
 
 ## Data Model
 
-(___TODO__: a description of your application's data and their relationships to each other_) 
+The application will store Users and Lesson Plans.
+* Users can have multiple lesson plans (via references).
+* Lesson plans belong to a single user (teacher) and can store information about materials, standards, due dates, and supervisor feedback.
+* Supervisor will have the ability to provide feedback, approve, or decline the Lesson plans
 
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
 
 (___TODO__: sample documents_)
 
@@ -28,9 +24,10 @@ An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
-  hash: // a password hash,
-  lists: // an array of references to List documents
+  "username": "mrsmith",
+  "hash": "/* password hash */",
+  "role": "", //Supervisor or teacher
+  "lessonPlans": [] // Supervisors don't own lesson plans, they only review them
 }
 ```
 
@@ -38,53 +35,88 @@ An Example List with Embedded Items:
 
 ```javascript
 {
-  user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
-  createdAt: // timestamp
+  "user": /* reference to teacher User */,
+  "teacherName": "Mr. Lopez",
+  "title": "Exploring Plant Life Cycles",
+  "grade": "4th Grade",
+  "subject": "Science",
+  "period": "Period 3",
+  "dateTeaching": "2025-11-10",
+  "learningObjective": "Students will be able to describe the stages of a plant's life cycle.",
+  "learningStandard": "NGSS.4.LS1.1",
+  "introduction": "Start with a short video about how seeds grow into plants.",
+  "activities": "Students will observe and label parts of a real plant.",
+  "closing": "Class discussion and reflection journal entry.",
+  "notes": "",
+  "approved": false,
+  "status": "pending_supervisor",
+  "createdAt": "2025-10-29T12:00:00Z"
 }
 ```
 
 
 ## [Link to Commented First Draft Schema](db.js) 
 
-(___TODO__: create a first draft of your Schemas in db.js and link to it_)
-
 ## Wireframes
 
-(___TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc._)
+/login - page for showing login screen
 
-/list/create - page for creating a new shopping list
+![login](documentation/login-screen.png)
 
-![list create](documentation/list-create.png)
+/register - page for showing registering user screen
 
-/list - page for showing all shopping lists
+![register](documentation/register-screen.png)
 
-![list](documentation/list.png)
+/setup - page for showing user set up account screen
 
-/list/slug - page for showing specific shopping list
+![setup](documentation/account-setup.png)
 
-![list](documentation/list-slug.png)
+/supervisor/home - page for supervisor homepage
+
+![supervisor home](documentation/supervisor-home.png)
+
+/supervisor/view - page for viewing all supervisor lesson plans
+
+![supervisor view](documentation/supervisor-view-all.png)
+
+/supervisor/view/slug - page for viewing a specific supervisor lesson
+
+![supervisor view slug](documentation/supervisor-lesson-plan-approve.png)
+
+/supervisor/profile - page for viewing supervisor profile
+
+![supervisor profile](documentation/supervisor-profile.png)
+
+/teacher/home - page for viewing a teacher's homepage 
+
+![teacher home](documentation/teacher-home.png)
+
+/teacher/view - page for viewing all teacher's lesson plans
+
+![teacher view](documentation/teacher-view-all.png)
+
+/teacher/view/create - page for viewing all teacher's lesson plans
+
+![teacher view create](documentation/teacher-create-new.png)
+
+/teacher/view/slug - page for viewing one teacher's lesson plans
+
+![teacher view slug](documentation/teacher-view-one.png)
+
+/teacher/standards - page for viewing all teacher's standards
+
+![teacher standards](documentation/teacher-standards.png)
+
+/teacher/profile - page for viewing teacher's profile
+
+![teacher profile](documentation/teacher-profile.png)
+
+
 
 ## Site map
 
-(___TODO__: draw out a site map that shows how pages are related to each other_)
+![teacher profile](documentation/site-map.png)
 
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
-
-## User Stories or Use Cases
-
-(___TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://www.mongodb.com/download-center?jmp=docs&_ga=1.47552679.1838903181.1489282706#previous)_)
-
-1. as non-registered user, I can register a new account with the site
-2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
 
 ## Research Topics
 
