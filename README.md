@@ -26,12 +26,12 @@ An Example User:
 {
   "username": "mrsmith",
   "hash": "/* password hash */",
-  "role": "", //Supervisor or teacher
+  "role": "supervisor", //Supervisor or teacher
   "lessonPlans": [] // Supervisors don't own lesson plans, they only review them
 }
 ```
 
-An Example List with Embedded Items:
+An Example Lesson Plan with Embedded Items:
 
 ```javascript
 {
