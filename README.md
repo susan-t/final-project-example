@@ -117,6 +117,24 @@ An Example List with Embedded Items:
 
 ![teacher profile](documentation/site-map.png)
 
+## User Stories or Use Cases
+
+1. As a teacher, I want to create and log into my account, so that I can securely access my lesson plans.
+2. As a teacher, I want to edit my profile information, so that I can keep my account details up to date.
+3. As a teacher, I want to create new lesson plans by filling out details such as title, grade, subject, objectives, and activities, so that I can organize and prepare my classroom materials.
+4. As a teacher, I want to attach learning standards and materials to each lesson plan, so that I can align my lessons with required guidelines.
+5. As a teacher, I want to view all my submitted lesson plans, so that I can review my past and upcoming lessons.
+6. As a teacher, I want to see the approval status (pending, approved, declined) of my lesson plans, so that I know which ones need updates.
+7. As a teacher, I want to edit and resubmit declined lesson plans, so that I can make corrections based on supervisor feedback.
+8. As a teacher, I want to read feedback or notes left by my supervisor, so that I can improve my lesson plans.
+9. As a teacher, I want to be notified when my lesson plan is approved or declined, so that I can respond in a timely manner.
+10. As a supervisor, I want to log into my account, so that I can review lesson plans submitted by teachers.
+11. As a supervisor, I want to view and update my profile information, so that my contact and professional details stay accurate.
+12. As a supervisor, I want to view all lesson plans submitted by teachers, so that I can evaluate their content.
+13. As a supervisor, I want to filter lesson plans by approval status (pending, approved, declined), so that I can manage reviews efficiently.
+14. As a supervisor, I want to approve or decline lesson plans, so that I can maintain teaching quality standards.
+15. As a supervisor, I want to add notes or feedback when declining a lesson plan, so that teachers understand what needs to be improved.
+16. As a supervisor, I want to mark lesson plans as approved, so that teachers know they’re ready for use in class.
 
 ## Research Topics
 
